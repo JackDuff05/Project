@@ -1,12 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Project.MainPage">
+             x:Class="Project.MainPage"
+             BackgroundColor="Black"
+             Shell.NavBarIsVisible="False"
+             Padding="0,40,0,0">
 
-    
-        <VerticalStackLayout
-          
-        </VerticalStackLayout>
-    
+    <!-- Main container -->
+    <Grid RowDefinitions="Auto,*,Auto">
 
+        <!-- Buttons and controls at the top -->
+        <StackLayout Grid.Row="0"
+                     VerticalOptions="Start" 
+                     HorizontalOptions="Center"
+                     Margin="20"
+                     Spacing="10">
+        </StackLayout>
+
+        <!-- This is where the road will be drawn -->
+        <GraphicsView x:Name="RoadCanvas"
+                      Grid.Row="1"
+                      HeightRequest="800"
+                      WidthRequest="400"
+                      HorizontalOptions="Center"
+                      VerticalOptions="Fill" />
+
+
+    </Grid>
 </ContentPage>
