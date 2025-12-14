@@ -6,25 +6,58 @@
              Shell.NavBarIsVisible="False"
              Padding="0,40,0,0">
 
-    <!-- Main container -->
-    <Grid RowDefinitions="Auto,*,Auto">
+    
+    <Grid RowDefinitions="*,Auto">
 
-        <!-- Buttons and controls at the top -->
-        <StackLayout Grid.Row="0"
-                     VerticalOptions="Start" 
-                     HorizontalOptions="Center"
-                     Margin="20"
-                     Spacing="10">
-        </StackLayout>
-
-        <!-- This is where the road will be drawn -->
+        
         <GraphicsView x:Name="RoadCanvas"
-                      Grid.Row="1"
+                      Grid.Row="0"
                       HeightRequest="800"
                       WidthRequest="400"
                       HorizontalOptions="Center"
                       VerticalOptions="Fill" />
 
+        <Image x:Name="PlayerCar"
+               Source="redcar.png"
+               WidthRequest="110"
+               HeightRequest="130"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               Margin="0,0,0,150"
+               Grid.Row="0" />
+       
+        <Grid Grid.Row="1"
+              VerticalOptions="End"
+              HorizontalOptions="Center"
+              WidthRequest="200"
+              Margin="10,0,10,10"
+              ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
+            <Button x:Name="LeftButton"
+                    Grid.Column="0"
+                    Text="◀"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    BackgroundColor="DarkRed"
+                    TextColor="White"
+                    HeightRequest="50"
+                    WidthRequest="100"
+                    Clicked="OnLeftButtonClicked" />
+
+            <Button x:Name="RightButton"
+                    Grid.Column="1"
+                    Text="▶"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    BackgroundColor="DarkRed"
+                    TextColor="White"
+                    HeightRequest="50"
+                    WidthRequest="100"
+                    Clicked="OnRightButtonClicked" />
+        </Grid>
     </Grid>
 </ContentPage>
