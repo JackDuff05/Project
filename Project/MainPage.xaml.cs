@@ -10,7 +10,8 @@ public partial class MainPage : ContentPage
 
     private int currentLane = 1;
 
-    private const double LANE_SPACING = 100.0; 
+    private const double LANE_SPACING = 100.0;
+
 
     public MainPage()
     {
@@ -35,6 +36,7 @@ public partial class MainPage : ContentPage
         myRoad.Update();
 
         RoadCanvas.Invalidate();
+
     }
 
     private void OnLeftButtonClicked(object sender, EventArgs e)

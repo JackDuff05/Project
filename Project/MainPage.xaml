@@ -9,13 +9,21 @@
     
     <Grid RowDefinitions="*,Auto">
 
-        
-        <GraphicsView x:Name="RoadCanvas"
+            <GraphicsView x:Name="RoadCanvas"
                       Grid.Row="0"
                       HeightRequest="800"
                       WidthRequest="400"
                       HorizontalOptions="Center"
                       VerticalOptions="Fill" />
+
+        <Image x:Name="EnemyCarContainer"
+               Source="enemycars.png"
+               Grid.Row="0"
+               HorizontalOptions="Center"
+               VerticalOptions="Fill"
+               WidthRequest="400"
+               HeightRequest="800" />
+
 
         <Image x:Name="PlayerCar"
                Source="redcar.png"
@@ -59,5 +67,7 @@
                     WidthRequest="100"
                     Clicked="OnRightButtonClicked" />
         </Grid>
+        
     </Grid>
+    
 </ContentPage>
