@@ -6,34 +6,30 @@
              Shell.NavBarIsVisible="False"
              Padding="0,40,0,0">
 
-    
+
     <Grid RowDefinitions="*,Auto">
 
+        <AbsoluteLayout x:Name="GameLayout" 
+                        Grid.Row="0" 
+                        WidthRequest="400"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Fill">
+
             <GraphicsView x:Name="RoadCanvas"
-                      Grid.Row="0"
-                      HeightRequest="800"
-                      WidthRequest="400"
-                      HorizontalOptions="Center"
-                      VerticalOptions="Fill" />
+                          HeightRequest="800"
+                          WidthRequest="400"
+                          AbsoluteLayout.LayoutBounds="0, 0, 400, 800"
+                          AbsoluteLayout.LayoutFlags="None" />
 
-        <Image x:Name="EnemyCarContainer"
-               Source="enemycars.png"
-               Grid.Row="0"
-               HorizontalOptions="Center"
-               VerticalOptions="Fill"
-               WidthRequest="400"
-               HeightRequest="800" />
+            <Image x:Name="PlayerCar"
+                   Source="redcar.png"
+                   WidthRequest="110"
+                   HeightRequest="130"
+                   AbsoluteLayout.LayoutBounds="145, 400, 110, 130"
+                   AbsoluteLayout.LayoutFlags="None" />
 
+        </AbsoluteLayout>
 
-        <Image x:Name="PlayerCar"
-               Source="redcar.png"
-               WidthRequest="110"
-               HeightRequest="130"
-               HorizontalOptions="Center"
-               VerticalOptions="End"
-               Margin="0,0,0,150"
-               Grid.Row="0" />
-       
         <Grid Grid.Row="1"
               VerticalOptions="End"
               HorizontalOptions="Center"
@@ -67,7 +63,7 @@
                     WidthRequest="100"
                     Clicked="OnRightButtonClicked" />
         </Grid>
-        
+
     </Grid>
-    
+
 </ContentPage>
