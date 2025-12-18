@@ -16,11 +16,31 @@
                         HorizontalOptions="Center"
                         VerticalOptions="Fill">
 
-            <GraphicsView x:Name="RoadCanvas"
+        <GraphicsView x:Name="RoadCanvas"
                           HeightRequest="800"
                           WidthRequest="400"
                           AbsoluteLayout.LayoutBounds="0, 0, 400, 800"
                           AbsoluteLayout.LayoutFlags="None" />
+
+            <VerticalStackLayout AbsoluteLayout.LayoutBounds="10, 10, 180, 80"
+                     AbsoluteLayout.LayoutFlags="None"
+                     BackgroundColor="#80000000"
+                     Padding="10"
+                     Spacing="5">
+
+                <Label x:Name="HighScoreLabel"
+                       Text="High Score: 0"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="Yellow"/>
+
+                <Label x:Name="ScoreLabel"
+                       Text="Score: 0"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="White"/>
+
+            </VerticalStackLayout>
 
             <Image x:Name="PlayerCar"
                    Source="redcar.png"

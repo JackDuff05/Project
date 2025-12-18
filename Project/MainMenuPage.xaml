@@ -9,7 +9,7 @@
           VerticalOptions="Center">
 
         <Label Grid.Row="0"
-               Text="TRAFFIC GAME"
+               Text="🏁 TRAFFIC GAME 🏁"
                FontSize="48"
                FontAttributes="Bold"
                TextColor="White"

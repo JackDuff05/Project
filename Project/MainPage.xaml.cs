@@ -19,6 +19,10 @@ public partial class MainPage : ContentPage
     private List<EnemyCar> enemyCars = new List<EnemyCar>();
     private Random random = new Random();
 
+    private int score = 0;
+    private int highScore = 0;
+    private IDispatcherTimer scoreTimer;
+
 
     //   private BoxView playerCollisionBox;
     //  private List<BoxView> enemyCollisionBoxes = new List<BoxView>();
@@ -58,6 +62,14 @@ public partial class MainPage : ContentPage
         enemySpawnTimer.Tick += SpawnEnemyCar;
         enemySpawnTimer.Start();
 
+        scoreTimer = Dispatcher.CreateTimer();
+        scoreTimer.Interval = TimeSpan.FromMilliseconds(100);
+        scoreTimer.Tick += OnScoreTick;
+        scoreTimer.Start();
+
+        highScore = Preferences.Get("HighScore", 0);
+        HighScoreLabel.Text = $"High Score: {highScore}";
+
         UpdateCarPosition();
        // SetupCollisionDebug();
     }
@@ -85,7 +97,6 @@ public partial class MainPage : ContentPage
             {
                 GameLayout.Children.Remove(enemyCars[i].carImage);
 
-                
                 if (enemyCars[i].collisionBox != null)
                 {
                     GameLayout.Children.Remove(enemyCars[i].collisionBox);
@@ -95,10 +106,37 @@ public partial class MainPage : ContentPage
             }
         }
     }
+    private void OnScoreTick(object sender, EventArgs e)
+    {
+        if (isAnimating)
+        {
+            score += 1; 
+            ScoreLabel.Text = $"Score: {score}";
+
+            if(score > highScore)
+            {
+                highScore = score;
+                HighScoreLabel.Text = $"High Score: {highScore}";
+                Preferences.Set("HighScore", highScore);
+            }
+        }
+    }
 
     private async void ShowGameOver()
     {
-        bool restart = await DisplayAlert("Game Over!", "You crashed!", "Restart", "Main Menu");
+        scoreTimer.Stop();
+
+        string message;
+        if(score >= highScore)
+        {
+            message = $"New High Score! Final Score: {score}! 🏆";
+        }
+        else
+        {
+            message = $"Score: {score}\nHigh Score: {highScore}";
+        }
+
+            bool restart = await DisplayAlert("Game Over!", message , "Restart", "Main Menu");
 
         if (restart)
         {
@@ -128,6 +166,9 @@ public partial class MainPage : ContentPage
 
         myRoad = new RoadDrawing();
         RoadCanvas.Drawable = myRoad;
+
+        score = 0;
+        ScoreLabel.Text = "Score: 0";
 
         isAnimating = true;
         animationTimer.Start();
