@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.MainMenuPage"
+             BackgroundColor="Black">
+
+    <Grid RowDefinitions="*, Auto, *" 
+          HorizontalOptions="Center"
+          VerticalOptions="Center">
+
+        <Label Grid.Row="0"
+               Text="TRAFFIC GAME"
+               FontSize="48"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               Margin="0,0,0,50"/>
+
+        <Button Grid.Row="1"
+                x:Name="StartButton"
+                Text="START GAME"
+                FontSize="24"
+                FontAttributes="Bold"
+                BackgroundColor="DarkRed"
+                TextColor="White"
+                WidthRequest="250"
+                HeightRequest="80"
+                CornerRadius="10"
+                Clicked="OnStartButtonClicked"/>
+
+        <BoxView Grid.Row="2" Color="Transparent"/>
+
+    </Grid>
+
+</ContentPage>

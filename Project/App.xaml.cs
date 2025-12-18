@@ -1,15 +1,15 @@
-﻿namespace Project
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-        }
+﻿namespace Project;
 
-        protected override Window CreateWindow(IActivationState? activationState)
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
+
+        MainPage = new NavigationPage(new MainMenuPage())
         {
-            return new Window(new AppShell());
-        }
+            BarBackgroundColor = Colors.Black,
+            BarTextColor = Colors.White
+        };
     }
 }

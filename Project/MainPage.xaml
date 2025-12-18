@@ -4,6 +4,7 @@
              x:Class="Project.MainPage"
              BackgroundColor="Black"
              Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
              Padding="0,40,0,0">
 
 

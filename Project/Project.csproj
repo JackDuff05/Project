@@ -71,4 +71,16 @@
 	  <MauiImage Include="Resources\Images\enemycars.png\yellowcar.png" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="MainMenuPage.xaml.cs">
+	    <DependentUpon>MainMenuPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="MainMenuPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
