@@ -29,6 +29,18 @@
                 CornerRadius="10"
                 Clicked="OnStartButtonClicked"/>
 
+        <Button Grid.Row="2"
+                x:Name="SettingsButton"
+                Text="SETTINGS"
+                FontSize="20"
+                FontAttributes="Bold"
+                BackgroundColor="#444444"
+                TextColor="White"
+                WidthRequest="250"
+                HeightRequest="60"
+                CornerRadius="10"
+                Clicked="OnSettingsButtonClicked"/>
+
         <BoxView Grid.Row="2" Color="Transparent"/>
 
     </Grid>
