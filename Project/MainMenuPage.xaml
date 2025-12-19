@@ -41,7 +41,7 @@
                 CornerRadius="10"
                 Clicked="OnSettingsButtonClicked"/>
 
-        <BoxView Grid.Row="2" Color="Transparent"/>
+        
 
     </Grid>
 
